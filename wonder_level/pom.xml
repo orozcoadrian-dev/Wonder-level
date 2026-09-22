@@ -8,8 +8,10 @@
 		<version>4.1.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>wonder.level</groupId>
 	<artifactId>wonder_level</artifactId>
+	
 	<version>0.0.1-SNAPSHOT</version>
 	<name>wonder_level</name>
 	<description/>

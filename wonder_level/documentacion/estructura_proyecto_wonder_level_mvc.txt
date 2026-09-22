@@ -1,0 +1,75 @@
+ESTRUCTURA FINAL DEL PROYECTO - wonder_level
+==============================================
+
+wonder_level/
+├── .github/
+├── .vscode/
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── wonder/
+│       │       └── level/
+│       │           └── wonderlevel/
+│       │               ├── WonderLevelApplication.java   (clase principal, @SpringBootApplication)
+│       │               ├── Config/
+│       │               ├── Controller/
+│       │               ├── Model/
+│       │               └── Service/
+│       │
+│       └── resources/
+│           ├── static/
+│           │   ├── css/
+│           │   │   └── styles.css
+│           │   └── img/
+│           │       └── (logo, imágenes de videojuegos, etc.)
+│           ├── templates/
+│           │   └── videojuegos.html
+│           └── application.properties
+│
+├── target/        (generada automáticamente por Maven, no se toca)
+└── pom.xml
+
+
+EXPLICACIÓN BREVE
+==================
+
+- java/         → todo el código Java (lógica del programa).
+- resources/    → todo lo que no es código Java: vistas HTML, CSS, imágenes y configuración.
+- Config/       → clases de configuración (@Configuration), opcional para casos avanzados.
+- Controller/   → clases que reciben las peticiones HTTP (URLs) y deciden qué mostrar.
+- Model/        → clases que representan los datos (ej. la clase Videojuego).
+- Service/      → lógica de negocio, si el proyecto crece.
+- templates/    → archivos HTML que se muestran al usuario (usando Thymeleaf).
+- static/       → archivos que el navegador pide directo, sin pasar por Java (CSS, imágenes, JS).
+- application.properties → configuración del proyecto, incluida la conexión a MySQL.
+
+
+PAQUETE DEL PROYECTO
+=====================
+
+Basado en tu pom.xml:
+  groupId:    wonder.level
+  artifactId: wonder_level
+
+Paquete Java resultante: wonder.level.wonderlevel
+Ruta de carpetas:        java/wonder/level/wonderlevel/
+
+
+NO OLVIDAR
+===========
+
+1. El archivo de configuración se llama "application.properties" (con doble p, sin errores de tipeo).
+2. WonderLevelApplication.java debe tener en su primera línea:
+   package wonder.level.wonderlevel;
+   Esto debe coincidir EXACTO con la ruta de carpetas donde está guardado.
+3. Config, Controller, Model y Service van DENTRO de la carpeta wonderlevel (junto al archivo principal),
+   nunca sueltas directamente en src/main.
+4. La carpeta "target" es generada por Maven al compilar. No se crea ni se edita a mano.
+5. Las imágenes propias van en resources/static/img, y se referencian en el HTML así:
+   <img src="/img/nombre_imagen.png">
+6. El CSS propio va en resources/static/css, y se enlaza en el HTML así:
+   <link rel="stylesheet" href="/css/styles.css">
+7. Para conectar MySQL, agregar en pom.xml las dependencias:
+   - spring-boot-starter-data-jpa
+   - mysql-connector-j
+8. La conexión a la base de datos se configura en application.properties (no existe una carpeta "db").
