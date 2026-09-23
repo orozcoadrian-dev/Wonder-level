@@ -1,0 +1,73 @@
+:root {
+    --wonder-violet: #6C4DFF;
+    --wonder-pink: #FF4FA3;
+    --wonder-turquoise: #20D9C2;
+}
+
+body {
+    background: linear-gradient(135deg, #f7f5ff 0%, #fff 55%, #eafffb 100%);
+}
+
+.navbar {
+    border-bottom: 3px solid var(--wonder-pink);
+}
+
+.navbar-brand img {
+    height: 40px;
+    object-fit: contain;
+}
+
+.catalog-hero {
+    min-height: 210px;
+    color: #fff;
+    background: linear-gradient(90deg, rgba(29, 20, 78, .92), rgba(108, 77, 255, .58)),
+        url('/Img/wonder_level_banner.png') center / cover;
+}
+
+.catalog-hero h1 {
+    text-shadow: 0 3px 14px rgba(0, 0, 0, .3);
+}
+
+.catalog-card {
+    margin-bottom: 1.5rem;
+    border: 0;
+    border-top: 4px solid var(--wonder-violet);
+    box-shadow: 0 8px 24px rgba(108, 77, 255, .14);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.catalog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px rgba(255, 79, 163, .22);
+}
+
+.catalog-card .card-img-top {
+    height: 190px;
+    object-fit: cover;
+}
+
+.catalog-card .card-title {
+    color: var(--wonder-violet);
+}
+
+.price {
+    color: #087f73;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.btn-wonder {
+    color: #fff;
+    background-color: var(--wonder-pink);
+    border-color: var(--wonder-pink);
+}
+
+.btn-wonder:hover {
+    color: #fff;
+    background-color: var(--wonder-violet);
+    border-color: var(--wonder-violet);
+}
+
+.empty-message {
+    color: var(--wonder-violet);
+}
